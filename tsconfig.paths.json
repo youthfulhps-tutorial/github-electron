@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@shared": ["./renderer/shared"],
+      "@shared/*": ["./renderer/shared/*"],
+      "@ThemeSwitch": ["./renderer/ThemeSwitch"],
+      "@ThemeSwitch/*": ["./renderer/ThemeSwitch/*"],
+    }
+  }
+}
