@@ -1,9 +1,10 @@
 @import './variables.scss';
+@import './light-theme.scss';
+@import './dark-theme.scss';
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;700&display=swap');
 
 body {
   font-family: 'IBM Plex Sans KR', sans-serif;
-  background-color: $color-500;
   -webkit-text-size-adjust: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.3s, color 0.3s;
