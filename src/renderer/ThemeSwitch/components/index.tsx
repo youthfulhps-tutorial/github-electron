@@ -1,4 +1,3 @@
-import React from 'react';
 import useTheme from '@ThemeSwitch/hooks/useTheme';
 import '../styles/index.scss';
 
@@ -7,8 +6,13 @@ const ThemeSwitch = () => {
 
   return (
     <div className="toggle-switch">
-      <label>
-        <input type="checkbox" onChange={handleModeChange} checked={isDark} />
+      <label htmlFor="switch">
+        <input
+          onChange={handleModeChange}
+          checked={isDark}
+          type="checkbox"
+          id="switch"
+        />
         <span className="slider" />
       </label>
     </div>
