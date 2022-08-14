@@ -6,6 +6,8 @@
       "@shared/*": ["./renderer/shared/*"],
       "@ThemeSwitch": ["./renderer/ThemeSwitch"],
       "@ThemeSwitch/*": ["./renderer/ThemeSwitch/*"],
+      "@UserProfile": ["./renderer/UserProfile"],
+      "@UserProfile/*": ["./renderer/UserProfile/*"],
     }
   }
 }
