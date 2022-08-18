@@ -8,6 +8,8 @@
       "@ThemeSwitch/*": ["./renderer/ThemeSwitch/*"],
       "@UserProfile": ["./renderer/UserProfile"],
       "@UserProfile/*": ["./renderer/UserProfile/*"],
+      "@Registration": ["./renderer/Registration"],
+      "@Registration/*": ["./renderer/Registration/*"]
     }
   }
 }
