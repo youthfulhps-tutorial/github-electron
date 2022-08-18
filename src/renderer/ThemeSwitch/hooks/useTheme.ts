@@ -1,4 +1,4 @@
-import { useState, ChangeEventHandler } from 'react';
+import { useState, ChangeEventHandler, useEffect } from 'react';
 import * as Dom from '@shared/utils/dom';
 import { THEME } from '../constants';
 
@@ -22,6 +22,11 @@ const useTheme = () => {
     setIsDark(isDark);
     toggleTheme(theme);
   };
+
+  useEffect(() => {
+    setIsDark(true);
+    toggleTheme(THEME.DARK);
+  }, []);
 
   return {
     isDark,
