@@ -1,7 +1,15 @@
 @import './variables.scss';
+@import './keyframes.scss';
 @import './light-theme.scss';
 @import './dark-theme.scss';
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  transition-duration: 0.1s;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: 'IBM Plex Sans KR', sans-serif;
