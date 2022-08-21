@@ -1,0 +1,77 @@
+@import '@shared/styles/variables.scss';
+
+.registration {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: $color-800;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  padding: $size-300;
+  color: $color-200;
+
+  .result-confirm {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    svg {
+      border: 1px solid white;
+      height: $size-400;
+      width: $size-400;
+      border-radius: 8px;
+      padding: 12px;
+      cursor: pointer;
+
+      &:first-child {
+        margin-right: $size-100;
+      }
+    }
+
+    &__confirm {
+      margin-right: $size-100;
+      path {
+        animation: fade-in 1s;
+        color: $color-success;
+      }
+      &:hover {
+        background-color: $color-success;
+
+        path {
+          color: $color-100;
+        }
+      }
+    }
+
+    &__cancel {
+      &:hover {
+        background-color: $color-danger;
+      }
+    }
+  }
+
+  h1 {
+    font-size: $size-400;
+    font-weight: bold;
+  }
+
+  input {
+    all: unset;
+    animation: fade-in 1.2s;
+    font-size: $size-300;
+    margin: $size-100 0 $size-200;
+    width: 100%;
+  }
+}
+
+.fade-out {
+  animation: fade-out 2s !important;
+}
+
+.move-to-right {
+  animation: move-to-right 2s !important;
+}
