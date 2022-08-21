@@ -1,17 +1,27 @@
-import { createContext, ReactNode, useCallback, useMemo } from 'react';
+import {
+  createContext,
+  ReactNode,
+  useCallback,
+  useMemo,
+  useState,
+} from 'react';
 
 type UserContextProviderProps = {
   children: ReactNode;
 };
 
 type UserContextState = {
+  hasUserId: boolean;
   userId: string;
+  setUserId: (userId: string) => void;
 };
 
 const USER_ID_KEY = 'github-electron:userId';
 
 const initialUserContextState: UserContextState = {
+  hasUserId: false,
   userId: '',
+  setUserId: (userId: string) => {},
 };
 
 export const UserContext = createContext<UserContextState>(
@@ -19,17 +29,20 @@ export const UserContext = createContext<UserContextState>(
 );
 
 const UserContextProvider = ({ children }: UserContextProviderProps) => {
-  const getUserId = useCallback(() => {
-    return localStorage.getItem(USER_ID_KEY) ?? '';
-  }, []);
+  const userId = localStorage.getItem(USER_ID_KEY) ?? '';
+
+  const [hasUserId, setHasUserId] = useState<boolean>(!!userId);
 
   const setUserId = useCallback((userId: string) => {
     localStorage.setItem(USER_ID_KEY, userId);
+    setTimeout(() => {
+      setHasUserId(true);
+    }, 2000);
   }, []);
 
   const userContextState = useMemo<UserContextState>(
-    () => ({ userId: getUserId(), setUserId }),
-    [getUserId, setUserId]
+    () => ({ hasUserId, userId, setUserId }),
+    [hasUserId, userId, setUserId]
   );
 
   return (
