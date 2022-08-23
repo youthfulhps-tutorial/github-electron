@@ -6,8 +6,9 @@ const useUser = (userId: string) => {
     queryKey: ['user', userId],
     queryFn: async () => {
       const { data } = await getUser(userId);
-      return data.data;
+      return data;
     },
+    enabled: !!userId,
   });
 
   return { user };
