@@ -1,0 +1,65 @@
+@import '@shared/styles/variables.scss';
+
+.user-profile {
+  position: relative;
+  overflow: hidden;
+  width: 160px;
+  height: 160px;
+
+  .avatar {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  }
+
+  .profile {
+    display: block;
+    width: 240px;
+    height: 240px;
+    content: '';
+    position: absolute;
+    bottom: -240px;
+    left: 0;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: $size-100;
+
+    color: $color-900;
+    font-size: $size-200;
+    font-weight: 700;
+    text-shadow: -1px 0px 10px rgba(0,0,0,0.6);
+  }
+
+  &:hover {
+    width: 240px;
+    height: 240px;
+    border-radius: 8px;
+    transition-duration: $trans-100;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    transition: width $trans-100 0s,
+      height $trans-100 0s,
+      box-shadow $trans-200 $trans-100;
+
+    .profile {
+      transition-duration: $trans-100;
+      transition-delay: $trans-200;
+      bottom: 0;
+    }
+
+    .avatar {
+      border-radius: 8px;
+      width: 240px;
+      height: 240px;
+      transition: width $trans-100 $trans-100,
+        height $trans-100 $trans-100,
+        border-radius $trans-100 $trans-100;
+      object-fit: cover;
+    }
+  }
+}
