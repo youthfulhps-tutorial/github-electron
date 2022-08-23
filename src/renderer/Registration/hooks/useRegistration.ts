@@ -36,7 +36,7 @@ const useRegistration = () => {
   const successRegistration = useCallback(() => {
     setUserId(inputValue);
     setIsFadingOut(true);
-  }, []);
+  }, [inputValue]);
 
   const cancelRegistration = useCallback(() => {
     setIsValidate(false);
