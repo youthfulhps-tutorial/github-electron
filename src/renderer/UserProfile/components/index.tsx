@@ -12,10 +12,14 @@ const UserProfile = () => {
   if (!user) return null;
 
   return (
-    <div className="user-profile">
+    <section className="user-profile">
       <Avatar sourceUrl={user.avatar_url} />
-      <Profile userName={user.login} />
-    </div>
+      <Profile
+        userName={user.login}
+        htmlUrl={user.html_url}
+        blogUrl={user.blog}
+      />
+    </section>
   );
 };
 
