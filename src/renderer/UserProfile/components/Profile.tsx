@@ -9,7 +9,7 @@ type ProfileProps = {
 
 const Profile = ({ userName, htmlUrl, blogUrl }: ProfileProps) => {
   return (
-    <div className="profile">
+    <>
       <div className="profile__user-name">{userName}</div>
       <Link className="profile__link" href={htmlUrl}>
         <Home />
@@ -19,7 +19,7 @@ const Profile = ({ userName, htmlUrl, blogUrl }: ProfileProps) => {
         <Blog />
         {blogUrl}
       </Link>
-    </div>
+    </>
   );
 };
 
