@@ -3,9 +3,12 @@
  */
 
 import webpack from 'webpack';
+import dotenv from 'dotenv';
 import webpackPaths from './webpack.paths';
 import { dependencies as externals } from '../../release/app/package.json';
 import aliasPaths from './webpack.alias.paths';
+
+dotenv.config({ path: './.env' });
 
 const configuration: webpack.Configuration = {
   externals: [...Object.keys(externals || {})],
@@ -48,6 +51,10 @@ const configuration: webpack.Configuration = {
   plugins: [
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'production',
+    }),
+
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(process.env),
     }),
   ],
 };
