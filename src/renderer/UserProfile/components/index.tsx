@@ -14,11 +14,13 @@ const UserProfile = () => {
   return (
     <section className="user-profile">
       <Avatar sourceUrl={user.avatar_url} />
-      <Profile
-        userName={user.login}
-        htmlUrl={user.html_url}
-        blogUrl={user.blog}
-      />
+      <div className="profile">
+        <Profile
+          userName={user.login}
+          htmlUrl={user.html_url}
+          blogUrl={user.blog}
+        />
+      </div>
     </section>
   );
 };
