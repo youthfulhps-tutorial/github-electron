@@ -14,6 +14,7 @@ import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
 import MenuBuilder from './menu';
 import { resolveHtmlPath } from './util';
+import { getAccessToken } from '@electron-utils/electron-oauth-github';
 
 class AppUpdater {
   constructor() {
@@ -93,6 +94,19 @@ const createWindow = async () => {
       mainWindow.show();
     }
   });
+
+  try {
+    const { access_token: accessToken } = await getAccessToken({
+      clientId: process.env.GITHUB_OAUTH_CLIENT_ID,
+      clientSecret: process.env.GITHUB_OAUTH_SECRET,
+      redirectUri: 'http://localhost:1212/',
+    });
+
+    mainWindow.webContents.send('accessToken', accessToken);
+  } catch (error) {
+    console.log('error happened');
+    console.log(error);
+  }
 
   mainWindow.on('closed', () => {
     mainWindow = null;
