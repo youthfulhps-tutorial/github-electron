@@ -1,0 +1,24 @@
+@import '@shared/styles/variables.scss';
+
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &__message {
+    font-size: $size-100;
+    color: $color-400;
+    margin-bottom: $size-100;
+  }
+
+  svg {
+    height: $size-300;
+    width: $size-300;
+    cursor: pointer;
+
+    path {
+      color: $color-200;
+    }
+  }
+}
