@@ -1,8 +1,13 @@
+import { CSSProperties } from 'react';
 import './index.scss';
 
-const Loader = () => {
+type LoaderProps = {
+  style?: CSSProperties;
+};
+
+const Loader = ({ style }: LoaderProps) => {
   return (
-    <div className="loader">
+    <div className="loader" style={style}>
       <div />
       <div />
       <div />
