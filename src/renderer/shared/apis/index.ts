@@ -20,7 +20,7 @@ axiosInstance.interceptors.request.use((config: AxiosRequestConfig) => {
   }
   const accessToken = getAccessToken();
 
-  if (accessToken) return;
+  if (!accessToken) return;
 
   config.headers.Authorization = `Token ${accessToken}`;
 
