@@ -16,9 +16,15 @@ body {
   -webkit-text-size-adjust: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.3s, color 0.3s;
+  padding: 4rem;
 }
 
 a {
   color: $color-100;
   text-decoration: none;
+}
+
+// ! disable react error overlay in development
+iframe {
+  display: none;
 }
