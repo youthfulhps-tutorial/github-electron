@@ -9,6 +9,7 @@ const useUser = (userId: string) => {
       return data;
     },
     enabled: !!userId,
+    suspense: true,
   });
 
   return { user };
