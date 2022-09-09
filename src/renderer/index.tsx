@@ -1,4 +1,5 @@
 import { createRoot } from 'react-dom/client';
+import cookie from 'cookiejs';
 import App from './App';
 
 const container = document.getElementById('root')!;
@@ -11,3 +12,8 @@ window.electron.ipcRenderer.once('ipc-example', (arg) => {
   console.log(arg);
 });
 window.electron.ipcRenderer.sendMessage('ipc-example', ['ping']);
+
+window.electron.ipcRenderer.on('accessToken', (payload) => {
+  if (!payload) return;
+  cookie.set('accessToken', payload as string);
+});

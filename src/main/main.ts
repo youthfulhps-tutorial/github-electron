@@ -12,9 +12,10 @@ import path from 'path';
 import { app, BrowserWindow, shell, ipcMain } from 'electron';
 import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
+// @ts-ignore
+import { getAccessToken } from '@electron-utils/electron-oauth-github';
 import MenuBuilder from './menu';
 import { resolveHtmlPath } from './util';
-import { getAccessToken } from '@electron-utils/electron-oauth-github';
 
 class AppUpdater {
   constructor() {

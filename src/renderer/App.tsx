@@ -7,17 +7,9 @@ import UserProfile from '@UserProfile/components';
 import UserContextProvider, { UserContext } from '@shared/contexts/UserContext';
 import '@shared/styles/index.scss';
 import { useContext } from 'react';
-import cookie from 'cookiejs';
 
 const Main = () => {
   const { hasUserId } = useContext(UserContext);
-
-  const { electron } = window;
-
-  electron.ipcRenderer.on('accessToken', (payload) => {
-    if (!payload) return;
-    cookie.set('access_token', payload as string);
-  });
 
   if (!hasUserId) return <Registration />;
 
@@ -36,6 +28,7 @@ export default function App() {
       queries: {
         refetchInterval: 1000 * 60 * 15,
         refetchOnWindowFocus: false,
+        retry: 10,
       },
     },
   });
