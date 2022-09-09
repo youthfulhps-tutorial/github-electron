@@ -9,18 +9,14 @@ const UserProfile = () => {
   const { userId } = useContext(UserContext);
   const { user } = useUser(userId);
 
-  if (!user) return null;
-
   return (
     <section className="user-profile">
       <Avatar sourceUrl={user.avatar_url} />
-      <div className="profile">
-        <Profile
-          userName={user.login}
-          htmlUrl={user.html_url}
-          blogUrl={user.blog}
-        />
-      </div>
+      <Profile
+        userName={user.login}
+        htmlUrl={user.html_url}
+        blogUrl={user.blog}
+      />
     </section>
   );
 };

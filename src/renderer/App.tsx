@@ -7,6 +7,7 @@ import UserProfile from '@UserProfile/components';
 import UserContextProvider, { UserContext } from '@shared/contexts/UserContext';
 import '@shared/styles/index.scss';
 import { useContext } from 'react';
+import SuspenseBoundary from '@shared/boundaries/SuspenseBoundary';
 
 const Main = () => {
   const { hasUserId } = useContext(UserContext);
@@ -15,9 +16,10 @@ const Main = () => {
 
   return (
     <>
-      <h1>테스트입니다</h1>
       <ThemeSwitch />
-      <UserProfile />
+      <SuspenseBoundary fallbackStyle={{ width: 360, height: 360 }}>
+        <UserProfile />
+      </SuspenseBoundary>
     </>
   );
 };
@@ -28,7 +30,6 @@ export default function App() {
       queries: {
         refetchInterval: 1000 * 60 * 15,
         refetchOnWindowFocus: false,
-        retry: 10,
       },
     },
   });
