@@ -18,7 +18,12 @@ axiosInstance.interceptors.request.use((config: AxiosRequestConfig) => {
       "Expected 'config' and 'config.headers' not to be undefined"
     );
   }
-  const accessToken = getAccessToken();
+
+  const isDev = process.env.NODE_ENV === 'development';
+
+  const accessToken = isDev
+    ? process.env.ELECTRON_GITHUB_DEVELOP_TOKEN
+    : getAccessToken();
 
   if (!accessToken) return;
 
