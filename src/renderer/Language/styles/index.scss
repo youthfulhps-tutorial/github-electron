@@ -1,0 +1,53 @@
+@import '@shared/styles/variables.scss';
+
+.language {
+  width: 360px;
+  height: 80px;
+  margin-top: $size-200; // ! temp
+  background-color: $color-700;
+  border-radius: 16px;
+  padding: $size-100;
+  overflow-y: scroll;
+  text-shadow: -1px 0px 10px rgba(0, 0, 0, 0.6);
+  transition-duration: $trans-100;
+  transition: height $trans-100;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .language-card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    &__color {
+      border-radius: 16px;
+      width: 48px;
+      height: 48px;
+      filter: grayscale(0.3);
+    }
+
+    &__info {
+      margin-left: $size-100;
+      color: $color-200;
+    }
+
+    &__count {
+      font-size: 12px;
+      color: $color-400;
+    }
+  }
+
+  .hidden {
+    opacity: 0;
+  }
+
+  &:hover {
+    height: 240px;
+    .hidden {
+      opacity: 1;
+    }
+  }
+}
+
