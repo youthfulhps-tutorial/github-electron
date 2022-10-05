@@ -4,6 +4,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import ThemeSwitch from '@ThemeSwitch/components';
 import Registration from '@Registration/components';
 import UserProfile from '@UserProfile/components';
+import Language from '@Language/components';
 import UserContextProvider, { UserContext } from '@shared/contexts/UserContext';
 import '@shared/styles/index.scss';
 import { useContext } from 'react';
@@ -20,6 +21,7 @@ const Main = () => {
       <SuspenseBoundary fallbackStyle={{ width: 360, height: 360 }}>
         <UserProfile />
       </SuspenseBoundary>
+      <Language />
     </>
   );
 };
