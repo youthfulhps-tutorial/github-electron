@@ -5,7 +5,7 @@ const aliasPaths = {
   '@ThemeSwitch': path.resolve(__dirname, '../../src/renderer/ThemeSwitch'),
   '@UserProfile': path.resolve(__dirname, '../../src/renderer/UserProfile'),
   '@Registration': path.resolve(__dirname, '../../src/renderer/Registration'),
-  '@Language': path.resolve(__dirname, '../../src/renderer/Language'),
+  '@LanguageList': path.resolve(__dirname, '../../src/renderer/LanguageList'),
 };
 
 export default aliasPaths;

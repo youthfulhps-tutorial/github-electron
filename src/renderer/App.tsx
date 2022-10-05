@@ -1,14 +1,14 @@
+import { useContext } from 'react';
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import UserContextProvider, { UserContext } from '@shared/contexts/UserContext';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import SuspenseBoundary from '@shared/boundaries/SuspenseBoundary';
 import ThemeSwitch from '@ThemeSwitch/components';
 import Registration from '@Registration/components';
 import UserProfile from '@UserProfile/components';
-import Language from '@Language/components';
-import UserContextProvider, { UserContext } from '@shared/contexts/UserContext';
+import Language from './LanguageList/components';
 import '@shared/styles/index.scss';
-import { useContext } from 'react';
-import SuspenseBoundary from '@shared/boundaries/SuspenseBoundary';
 
 const Main = () => {
   const { hasUserId } = useContext(UserContext);

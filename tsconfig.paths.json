@@ -10,8 +10,8 @@
       "@UserProfile/*": ["./renderer/UserProfile/*"],
       "@Registration": ["./renderer/Registration"],
       "@Registration/*": ["./renderer/Registration/*"],
-      "@Language": ["./renderer/Language"],
-      "@Language/*": ["./renderer/Language/*"]
+      "@LanguageList": ["./renderer/LanguageList"],
+      "@LanguageList/*": ["./renderer/LanguageList/*"]
     }
   }
 }
